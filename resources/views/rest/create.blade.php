@@ -1,0 +1,27 @@
+@extends('layouts.parent')
+
+@section('title', 'Rest.create')
+
+@section('menubar')
+@parent
+RestData登録ページ
+@endsection
+
+@section('content')
+<form action="/rest" method="post">
+    <table>
+        @csrf
+        <tr>
+            <th>message:</th>
+            <td><input type="text" name="message" value="{{old('message')}}"></td>
+        </tr>
+        <tr>
+            <th>url:</th>
+            <td><input type="text" name="url" value="{{old('url')}}"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="send"></td>
+        </tr>
+    </table>
+</form>
+@endsection
